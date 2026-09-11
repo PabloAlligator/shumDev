@@ -15,19 +15,29 @@
       content="YNw7eEb2xgg7xfCeSi8yrnbr4jF_qt68itq-VddDlA0"
     />
     <meta name="yandex-verification" content="8263f56a65a66e4d" />
-    <meta name="robots" content="index, follow" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <meta name="theme-color" content="#0b0f19" />
 
-    <link rel="canonical" href="https://shumdev.ru/site/pages/services.html" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href="https://shumdev.ru/services.html" />
+    <link
+      rel="alternate"
+      hreflang="ru-RU"
+      href="https://shumdev.ru/services.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://shumdev.ru/services.html"
+    />
     <link
       rel="icon"
-      href="../image/inimi-logo-Photoroom.webp"
-      type="image/png"
+      href="/site/image/inimi-logo-Photoroom.webp"
+      type="image/webp"
     />
-    <link rel="apple-touch-icon" href="../image/inimi-logo-Photoroom.webp" />
+    <link rel="apple-touch-icon" href="/site/image/inimi-logo-Photoroom.png" />
 
     <meta http-equiv="Content-Language" content="ru" />
     <meta name="geo.region" content="RU-HA" />
@@ -43,14 +53,15 @@
 
     <meta
       property="og:url"
-      content="https://shumdev.ru/site/pages/services.html"
+      content="https://shumdev.ru/services.html"
     />
     <meta
       property="og:image"
-      content="https://shumdev.ru/site/image/og-cover.jpg"
+      content="https://shumdev.ru/site/image/newHero.png"
     />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1685" />
+    <meta property="og:image:height" content="934" />
     <meta
       property="og:image:alt"
       content="ShumDev — цифровые платформы и веб-системы для бизнеса"
@@ -74,7 +85,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://shumdev.ru/site/image/og-cover.jpg"
+      content="https://shumdev.ru/site/image/newHero.png"
     />
     <meta
       name="twitter:image:alt"
@@ -88,22 +99,25 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="../css/main.css?v=20260911-1" />
+    <link rel="stylesheet" href="/site/css/main.min.css?v=20260911-2" />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://shumdev.ru/#organization",
         "name": "ShumDev",
         "url": "https://shumdev.ru/",
         "logo": "https://shumdev.ru/site/image/inimi-logo-Photoroom.webp",
         "description": "Цифровые платформы и веб-системы для малого и среднего бизнеса",
         "email": "mailto:infoShumdev@mail.ru",
-        "telephone": "+79233906649",
+        "telephone": "+7 923 390-66-49",
+        "areaServed": ["Абакан", "Республика Хакасия", "Сибирь", "Россия"],
         "sameAs": ["https://t.me/ShumDevWeb"],
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Абакан",
+          "addressRegion": "Республика Хакасия",
           "addressCountry": "RU"
         }
       }
@@ -113,8 +127,11 @@
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": "https://shumdev.ru/#website",
         "name": "ShumDev",
-        "url": "https://shumdev.ru/"
+        "url": "https://shumdev.ru/",
+        "inLanguage": "ru-RU",
+        "publisher": { "@id": "https://shumdev.ru/#organization" }
       }
     </script>
 
@@ -122,22 +139,106 @@
       {
         "@context": "https://schema.org",
         "@type": "Service",
+        "@id": "https://shumdev.ru/services.html#service",
         "name": "Создание цифровой платформы для бизнеса",
-        "provider": {
-          "@type": "Organization",
-          "name": "ShumDev",
-          "url": "https://shumdev.ru"
+        "url": "https://shumdev.ru/services.html",
+        "description": "Проектирование, индивидуальный дизайн, разработка, запуск и сопровождение цифровой платформы бизнеса.",
+        "provider": { "@id": "https://shumdev.ru/#organization" },
+        "areaServed": ["Абакан", "Республика Хакасия", "Сибирь", "Россия"],
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Малый и средний бизнес"
         },
-        "areaServed": "RU",
         "serviceType": "Разработка и сопровождение цифровых платформ",
         "offers": {
           "@type": "Offer",
+          "url": "https://shumdev.ru/services.html",
+          "description": "ShumDev Business: 10 000 ₽ в месяц, минимальный срок — 12 месяцев.",
           "priceSpecification": {
-            "@type": "PriceSpecification",
+            "@type": "UnitPriceSpecification",
             "price": "10000",
-            "priceCurrency": "RUB"
+            "priceCurrency": "RUB",
+            "unitText": "месяц"
           }
         }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "https://shumdev.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Решения",
+            "item": "https://shumdev.ru/services.html"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Это обычный сайт?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Сайт может быть публичной частью решения. Дополнительно платформа может включать каталог, запись, заявки, админ-панель, CRM и другие инструменты бизнеса."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Зачем платформа, если есть соцсети и геосервисы?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Эти каналы помогают аудитории найти компанию. Собственная платформа подробно показывает предложение и переводит человека к звонку, записи, заявке или заказу."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что входит в 10 000 ₽ в месяц?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Проектирование, индивидуальный дизайн, разработка, мобильная адаптация, запуск, базовая SEO-подготовка, аналитика, формы и техническое сопровождение в согласованном объёме. Домен, SSL и размещение входят, если это предусмотрено договором."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Почему минимальный срок — 12 месяцев?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ежемесячная модель распределяет стоимость создания, запуска и сопровождения платформы на весь период сотрудничества."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какие работы оплачиваются отдельно?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Новые крупные модули, CRM, платёжные системы, личные кабинеты, сложные интеграции, калькуляторы и существенная переработка утверждённого проекта."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Вы гарантируете клиентов и позиции в поиске?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Мы создаём инфраструктуру для продвижения и обработки обращений. Результат зависит от спроса, предложения, конкуренции, рекламы и используемых каналов."
+            }
+          }
+        ]
       }
     </script>
   </head>
@@ -147,17 +248,17 @@
     <header class="header">
       <div class="container">
         <div class="header-content">
-          <a href="../../index.html" class="logo">
+          <a href="/" class="logo">
             <img src="../image/image-Photoroom.webp" alt="Логотип ShumDev"
             loading="lazy"
 decoding="async" />
           </a>
 
           <nav class="nav">
-            <a href="../../index.html" class="nav-link">Главная</a>
-            <a href="#" class="nav-link active">Решения</a>
-            <a href="../pages/Price.html" class="nav-link">Проекты</a>
-            <a href="../pages/company.html" class="nav-link">О Компании</a>
+            <a href="/" class="nav-link">Главная</a>
+            <a href="/services.html" class="nav-link active" aria-current="page">Решения</a>
+            <a href="/price.html" class="nav-link">Проекты</a>
+            <a href="/company.html" class="nav-link">О компании</a>
             <a href="#contact" class="nav-link">Контакты</a>
           </nav>
 
@@ -205,22 +306,22 @@ decoding="async" />
         </div>
 
         <nav class="mobile-menu__nav">
-          <a href="../../index.html" class="mobile-menu__link">
+          <a href="/" class="mobile-menu__link">
             <span class="mobile-menu__icon mobile-menu__icon--home"></span>
             <span class="mobile-menu__text">Главная</span>
           </a>
 
-          <a href="#" class="mobile-menu__link active">
+          <a href="/services.html" class="mobile-menu__link active" aria-current="page">
             <span class="mobile-menu__icon mobile-menu__icon--services"></span>
             <span class="mobile-menu__text">Решения</span>
           </a>
 
-          <a href="../pages/Price.html" class="mobile-menu__link">
+          <a href="/price.html" class="mobile-menu__link">
             <span class="mobile-menu__icon mobile-menu__icon--projects"></span>
             <span class="mobile-menu__text">Проекты</span>
           </a>
 
-          <a href="../pages/company.html" class="mobile-menu__link">
+          <a href="/company.html" class="mobile-menu__link">
             <span class="mobile-menu__icon mobile-menu__icon--company"></span>
             <span class="mobile-menu__text">О компании</span>
           </a>
@@ -467,7 +568,7 @@ decoding="async" />
           </p>
         </div>
 
-        <div class="products__accardeon">
+        <div class="products__accordion" data-accordion>
           <div class="products__item active">
             <button class="products__trigger">
               <div class="products__left">
@@ -796,7 +897,6 @@ decoding="async" />
     <section class="business-faq" aria-labelledby="business-faq-title">
       <div class="container">
         <div class="business-faq__header">
-          <span>Коротко о главном</span>
           <h2 id="business-faq-title">Вопросы о цифровой платформе</h2>
           <p>
             Простые ответы об оплате, сопровождении, продвижении и границах
@@ -804,60 +904,150 @@ decoding="async" />
           </p>
         </div>
 
-        <div class="business-faq__list">
-          <details class="business-faq__item">
-            <summary>Это обычный сайт?<span aria-hidden="true">+</span></summary>
-            <p>
-              Сайт может быть публичной частью решения. Дополнительно платформа
-              может включать каталог, запись, заявки, админ-панель, CRM и другие
-              инструменты бизнеса.
-            </p>
-          </details>
+        <div class="products__accordion business-faq__accordion" data-accordion>
+          <div class="products__item active">
+            <button
+              class="products__trigger"
+              type="button"
+              aria-expanded="true"
+              aria-controls="faq-answer-site"
+            >
+              <span class="products__left">
+                <span class="products__icon products__icon--blue" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2" /><path d="M9 20h6M12 17v3" /></svg>
+                </span>
+                <span>Это обычный сайт?</span>
+              </span>
+              <span class="products__arrow" aria-hidden="true"></span>
+            </button>
+            <div class="products__content" id="faq-answer-site" role="region">
+              <p>
+                Сайт может быть публичной частью решения. Дополнительно платформа
+                может включать каталог, запись, заявки, админ-панель, CRM и другие
+                инструменты бизнеса.
+              </p>
+            </div>
+          </div>
 
-          <details class="business-faq__item">
-            <summary>Зачем платформа, если есть соцсети и 2ГИС?<span aria-hidden="true">+</span></summary>
-            <p>
-              Эти каналы помогают аудитории найти компанию. Собственная
-              платформа подробно показывает предложение и переводит человека к
-              звонку, записи, заявке или заказу.
-            </p>
-          </details>
+          <div class="products__item">
+            <button
+              class="products__trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="faq-answer-channels"
+            >
+              <span class="products__left">
+                <span class="products__icon products__icon--pink" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9M12 3c-3 3-4 6-4 9s1 6 4 9" /></svg>
+                </span>
+                <span>Зачем платформа, если есть соцсети и геосервисы?</span>
+              </span>
+              <span class="products__arrow" aria-hidden="true"></span>
+            </button>
+            <div class="products__content" id="faq-answer-channels" role="region">
+              <p>
+                Эти каналы помогают аудитории найти компанию. Собственная
+                платформа подробно показывает предложение и переводит человека к
+                звонку, записи, заявке или заказу.
+              </p>
+            </div>
+          </div>
 
-          <details class="business-faq__item">
-            <summary>Что входит в 10 000 ₽ в месяц?<span aria-hidden="true">+</span></summary>
-            <p>
-              Проектирование, индивидуальный дизайн, разработка, мобильная
-              адаптация, запуск, базовая SEO-подготовка, аналитика, формы и
-              техническое сопровождение в согласованном объёме. Домен, SSL и
-              размещение входят, если это предусмотрено договором.
-            </p>
-          </details>
+          <div class="products__item">
+            <button
+              class="products__trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="faq-answer-business"
+            >
+              <span class="products__left">
+                <span class="products__icon products__icon--purple" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 7h16v13H4zM7 4h10v3H7zM8 12l3 3 5-6" /></svg>
+                </span>
+                <span>Что входит в 10 000 ₽ в месяц?</span>
+              </span>
+              <span class="products__arrow" aria-hidden="true"></span>
+            </button>
+            <div class="products__content" id="faq-answer-business" role="region">
+              <p>
+                Проектирование, индивидуальный дизайн, разработка, мобильная
+                адаптация, запуск, базовая SEO-подготовка, аналитика, формы и
+                техническое сопровождение в согласованном объёме. Домен, SSL и
+                размещение входят, если это предусмотрено договором.
+              </p>
+            </div>
+          </div>
 
-          <details class="business-faq__item">
-            <summary>Почему минимальный срок — 12 месяцев?<span aria-hidden="true">+</span></summary>
-            <p>
-              Ежемесячная модель распределяет стоимость создания, запуска и
-              сопровождения платформы на весь период сотрудничества.
-            </p>
-          </details>
+          <div class="products__item">
+            <button
+              class="products__trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="faq-answer-term"
+            >
+              <span class="products__left">
+                <span class="products__icon products__icon--green" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M8 3v4M16 3v4M4 10h16M8 14h3" /></svg>
+                </span>
+                <span>Почему минимальный срок — 12 месяцев?</span>
+              </span>
+              <span class="products__arrow" aria-hidden="true"></span>
+            </button>
+            <div class="products__content" id="faq-answer-term" role="region">
+              <p>
+                Ежемесячная модель распределяет стоимость создания, запуска и
+                сопровождения платформы на весь период сотрудничества.
+              </p>
+            </div>
+          </div>
 
-          <details class="business-faq__item">
-            <summary>Какие работы оплачиваются отдельно?<span aria-hidden="true">+</span></summary>
-            <p>
-              Новые крупные модули, CRM, платёжные системы, личные кабинеты,
-              сложные интеграции, калькуляторы и существенная переработка
-              утверждённого проекта.
-            </p>
-          </details>
+          <div class="products__item">
+            <button
+              class="products__trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="faq-answer-extra"
+            >
+              <span class="products__left">
+                <span class="products__icon products__icon--orange" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M14 6l4 4M12 8l4 4M5 19l4-1 9-9-3-3-9 9-1 4z" /><path d="M12 4H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-7" /></svg>
+                </span>
+                <span>Какие работы оплачиваются отдельно?</span>
+              </span>
+              <span class="products__arrow" aria-hidden="true"></span>
+            </button>
+            <div class="products__content" id="faq-answer-extra" role="region">
+              <p>
+                Новые крупные модули, CRM, платёжные системы, личные кабинеты,
+                сложные интеграции, калькуляторы и существенная переработка
+                утверждённого проекта.
+              </p>
+            </div>
+          </div>
 
-          <details class="business-faq__item">
-            <summary>Вы гарантируете клиентов и позиции в поиске?<span aria-hidden="true">+</span></summary>
-            <p>
-              Нет. Мы создаём инфраструктуру для продвижения и обработки
-              обращений. Результат зависит от спроса, предложения, конкуренции,
-              рекламы и используемых каналов.
-            </p>
-          </details>
+          <div class="products__item">
+            <button
+              class="products__trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="faq-answer-guarantees"
+            >
+              <span class="products__left">
+                <span class="products__icon products__icon--blue" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="M16 16l5 5M8 11h6" /></svg>
+                </span>
+                <span>Вы гарантируете клиентов и позиции в поиске?</span>
+              </span>
+              <span class="products__arrow" aria-hidden="true"></span>
+            </button>
+            <div class="products__content" id="faq-answer-guarantees" role="region">
+              <p>
+                Нет. Мы создаём инфраструктуру для продвижения и обработки
+                обращений. Результат зависит от спроса, предложения, конкуренции,
+                рекламы и используемых каналов.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1003,7 +1193,7 @@ decoding="async"/>
                   Я даю согласие на обработку моих персональных данных и
                   подтверждаю, что ознакомился(ась) с
                   <a
-                    href="../privacy-policy.html"
+                    href="/privacy-policy.html"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -1046,15 +1236,15 @@ decoding="async"/>
     <footer class="footer">
       <div class="container">
         <div class="footer-links">
-          <a href="../../index.html" class="footer-link">Главная</a>
+          <a href="/" class="footer-link">Главная</a>
           <a href="#home" class="footer-link">Решения</a>
-          <a href="../pages/Price.html" class="footer-link">Проекты</a>
-          <a href="../pages/company.html" class="footer-link">О компании</a>
+          <a href="/price.html" class="footer-link">Проекты</a>
+          <a href="/company.html" class="footer-link">О компании</a>
           <a href="#contact" class="footer-link">Контакты</a>
-          <a href="../public-offer.html" target="_blank" class="footer-link">
+          <a href="/public-offer.html" target="_blank" class="footer-link">
             Публичная оферта
           </a>
-          <a href="../privacy-policy.html" target="_blank" class="footer-link"
+          <a href="/privacy-policy.html" target="_blank" class="footer-link"
             >Политика конфиденциальности</a
           >
         </div>
@@ -1081,7 +1271,7 @@ decoding="async"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="../JavaScript/js.js?v=20260911-1"></script>
+    <script src="/site/JavaScript/js.js?v=20260911-2"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
   </body>
 </html>

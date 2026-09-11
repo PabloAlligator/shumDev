@@ -432,25 +432,42 @@ if (burger && mobileMenu && mobileMenuOverlay && mobileMenuClose) {
         });
     }
 
-    // аккардеон для секции "products"
-    const items = document.querySelectorAll('.products__item');
+    // Единый аккордеон для состава платформы и FAQ.
+    document.querySelectorAll('[data-accordion]').forEach((accordion, accordionIndex) => {
+        const items = accordion.querySelectorAll('.products__item');
 
-    items.forEach(item => {
+        items.forEach((item, itemIndex) => {
+            const trigger = item.querySelector('.products__trigger');
+            const content = item.querySelector('.products__content');
 
-        const trigger = item.querySelector(".products__trigger");
+            if (!trigger || !content) return;
 
-        trigger.addEventListener("click", () => {
+            trigger.type = 'button';
 
-            const active = document.querySelector('.products__item.active')
-
-            if (active && active != item) {
-                active.classList.remove("active");
+            if (!content.id) {
+                content.id = `accordion-${accordionIndex + 1}-panel-${itemIndex + 1}`;
             }
 
-            item.classList.toggle("active");
+            trigger.setAttribute('aria-controls', content.id);
+            trigger.setAttribute('aria-expanded', String(item.classList.contains('active')));
+            content.setAttribute('aria-hidden', String(!item.classList.contains('active')));
 
+            trigger.addEventListener('click', () => {
+                const willOpen = !item.classList.contains('active');
+                const active = accordion.querySelector('.products__item.active');
+
+                if (active && active !== item) {
+                    active.classList.remove('active');
+                    active.querySelector('.products__trigger')?.setAttribute('aria-expanded', 'false');
+                    active.querySelector('.products__content')?.setAttribute('aria-hidden', 'true');
+                }
+
+                item.classList.toggle('active', willOpen);
+                trigger.setAttribute('aria-expanded', String(willOpen));
+                content.setAttribute('aria-hidden', String(!willOpen));
+            });
         });
-    })
+    });
 });
 
 // табы для секции "double"

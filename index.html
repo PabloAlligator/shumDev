@@ -15,19 +15,21 @@
       content="YNw7eEb2xgg7xfCeSi8yrnbr4jF_qt68itq-VddDlA0"
     />
     <meta name="yandex-verification" content="8263f56a65a66e4d" />
-    <meta name="robots" content="index, follow" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <meta name="theme-color" content="#0b0f19" />
 
     <link rel="canonical" href="https://shumdev.ru/" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="alternate" hreflang="ru-RU" href="https://shumdev.ru/" />
+    <link rel="alternate" hreflang="x-default" href="https://shumdev.ru/" />
     <link
-      rel="shortcut icon"
-      href="site/image/inimi-logo-Photoroom.webp"
-      type="image/png"
+      rel="icon"
+      href="/site/image/inimi-logo-Photoroom.webp"
+      type="image/webp"
     />
-    <link rel="apple-touch-icon" href="site/image/inimi-logo-Photoroom.webp" />
+    <link rel="apple-touch-icon" href="/site/image/inimi-logo-Photoroom.png" />
 
     <!-- preload для CSS -->
     <!-- <link rel="preload" href="site/css/main.css" as="style" /> -->
@@ -50,10 +52,11 @@
     <meta property="og:url" content="https://shumdev.ru/" />
     <meta
       property="og:image"
-      content="https://shumdev.ru/site/image/og-cover.jpg"
+      content="https://shumdev.ru/site/image/newHero.png"
     />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1685" />
+    <meta property="og:image:height" content="934" />
     <meta
       property="og:image:alt"
       content="ShumDev — цифровые платформы и веб-системы для бизнеса"
@@ -72,7 +75,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://shumdev.ru/site/image/og-cover.jpg"
+      content="https://shumdev.ru/site/image/newHero.png"
     />
     <meta
       name="twitter:image:alt"
@@ -86,22 +89,25 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/site/css/main.min.css?v=20260911-1" />
+    <link rel="stylesheet" href="/site/css/main.min.css?v=20260911-2" />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://shumdev.ru/#organization",
         "name": "ShumDev",
         "url": "https://shumdev.ru/",
         "logo": "https://shumdev.ru/site/image/inimi-logo-Photoroom.webp",
         "description": "Цифровые платформы и веб-системы для малого и среднего бизнеса",
         "email": "mailto:infoShumdev@mail.ru",
-        "telephone": "+79233906649",
+        "telephone": "+7 923 390-66-49",
+        "areaServed": ["Абакан", "Республика Хакасия", "Сибирь", "Россия"],
         "sameAs": ["https://t.me/ShumDevWeb"],
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Абакан",
+          "addressRegion": "Республика Хакасия",
           "addressCountry": "RU"
         }
       }
@@ -111,8 +117,11 @@
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": "https://shumdev.ru/#website",
         "name": "ShumDev",
-        "url": "https://shumdev.ru/"
+        "url": "https://shumdev.ru/",
+        "inLanguage": "ru-RU",
+        "publisher": { "@id": "https://shumdev.ru/#organization" }
       }
     </script>
 
@@ -120,20 +129,26 @@
       {
         "@context": "https://schema.org",
         "@type": "Service",
+        "@id": "https://shumdev.ru/services.html#service",
         "name": "Создание цифровых платформ для бизнеса",
-        "provider": {
-          "@type": "Organization",
-          "name": "ShumDev",
-          "url": "https://shumdev.ru/"
+        "url": "https://shumdev.ru/services.html",
+        "description": "Проектирование, индивидуальный дизайн, разработка, запуск и сопровождение цифровой платформы бизнеса.",
+        "provider": { "@id": "https://shumdev.ru/#organization" },
+        "areaServed": ["Абакан", "Республика Хакасия", "Сибирь", "Россия"],
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Малый и средний бизнес"
         },
-        "areaServed": "RU",
         "serviceType": "Разработка и сопровождение цифровых платформ",
         "offers": {
           "@type": "Offer",
+          "url": "https://shumdev.ru/services.html",
+          "description": "ShumDev Business: 10 000 ₽ в месяц, минимальный срок — 12 месяцев.",
           "priceSpecification": {
-            "@type": "PriceSpecification",
+            "@type": "UnitPriceSpecification",
             "price": "10000",
-            "priceCurrency": "RUB"
+            "priceCurrency": "RUB",
+            "unitText": "месяц"
           }
         }
       }
@@ -155,10 +170,10 @@
           </a>
 
           <nav class="nav">
-            <a href="#" class="nav-link active">Главная</a>
-            <a href="site/pages/services.html" class="nav-link">Решения</a>
-            <a href="site/pages/Price.html" class="nav-link">Проекты</a>
-            <a href="site/pages/company.html" class="nav-link">О компании</a>
+            <a href="/" class="nav-link active" aria-current="page">Главная</a>
+            <a href="/services.html" class="nav-link">Решения</a>
+            <a href="/price.html" class="nav-link">Проекты</a>
+            <a href="/company.html" class="nav-link">О компании</a>
             <a href="#contact" class="nav-link">Контакты</a>
           </nav>
 
@@ -206,22 +221,22 @@
         </div>
 
         <nav class="mobile-menu__nav">
-          <a href="#" class="mobile-menu__link active">
+          <a href="/" class="mobile-menu__link active" aria-current="page">
             <span class="mobile-menu__icon mobile-menu__icon--home"></span>
             <span class="mobile-menu__text">Главная</span>
           </a>
 
-          <a href="site/pages/services.html" class="mobile-menu__link">
+          <a href="/services.html" class="mobile-menu__link">
             <span class="mobile-menu__icon mobile-menu__icon--services"></span>
             <span class="mobile-menu__text">Решения</span>
           </a>
 
-          <a href="site/pages/Price.html" class="mobile-menu__link">
+          <a href="/price.html" class="mobile-menu__link">
             <span class="mobile-menu__icon mobile-menu__icon--projects"></span>
             <span class="mobile-menu__text">Проекты</span>
           </a>
 
-          <a href="site/pages/company.html" class="mobile-menu__link">
+          <a href="/company.html" class="mobile-menu__link">
             <span class="mobile-menu__icon mobile-menu__icon--about"></span>
             <span class="mobile-menu__text">О компании</span>
           </a>
@@ -291,7 +306,7 @@
             </p>
 
             <div class="hero-buttons">
-              <a href="site/pages/Price.html" class="btn btn-primary"
+              <a href="/price.html" class="btn btn-primary"
                 >Посмотреть проекты</a
               >
               <a href="#contact" class="btn btn-outline">Оставить заявку</a>
@@ -342,7 +357,7 @@
             </p>
 
             <div class="hero-buttons">
-              <a href="site/pages/Price.html" class="btn btn-primary">
+              <a href="/price.html" class="btn btn-primary">
                 Смотреть проекты
               </a>
               <a href="#contact" class="btn btn-outline"> Обсудить задачу </a>
@@ -572,20 +587,20 @@
             <div class="about-text">
               <div class="about-stats">
                 <div class="stat">
-                  <div class="stat-number">Россия</div>
-                  <div class="stat-label">Работаем удалённо</div>
+                  <div class="stat-number">3+</div>
+                  <div class="stat-label">Года опытов</div>
                 </div>
                 <div class="stat">
-                  <div class="stat-number">4</div>
-                  <div class="stat-label">Специалиста в команде</div>
+                  <div class="stat-number">35</div>
+                  <div class="stat-label">Завершенных проектов</div>
                 </div>
                 <div class="stat">
-                  <div class="stat-number">Под ключ</div>
-                  <div class="stat-label">Дизайн, код и запуск</div>
+                  <div class="stat-number">100%</div>
+                  <div class="stat-label">Довольных клиентов</div>
                 </div>
                 <div class="stat">
-                  <div class="stat-number">Без шаблонов</div>
-                  <div class="stat-label">Под задачи бизнеса</div>
+                  <div class="stat-number">24/7</div>
+                  <div class="stat-label">Поддержка</div>
                 </div>
               </div>
             </div>
@@ -856,7 +871,7 @@
 
           <div class="team-card">
             <div class="team-card__img">
-              <img src="site/image/pablo-ph3.png" alt="Павел Шумилов" />
+              <img src="/site/image/pablo-ph3.webp" alt="Павел Шумилов" />
             </div>
             <div class="team-card__content">
               <h3>Павел Шумилов</h3>
@@ -1018,7 +1033,7 @@
                   Я даю согласие на обработку моих персональных данных и
                   подтверждаю, что ознакомился(ась) с
                   <a
-                    href="site/privacy-policy.html"
+                    href="/privacy-policy.html"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -1106,14 +1121,14 @@
       <div class="container">
         <div class="footer-links">
           <a href="#home" class="footer-link">Главная</a>
-          <a href="site/pages/services.html" class="footer-link">Решения</a>
-          <a href="site/pages/Price.html" class="footer-link">Проекты</a>
-          <a href="site/pages/company.html" class="footer-link">О компании</a>
+          <a href="/services.html" class="footer-link">Решения</a>
+          <a href="/price.html" class="footer-link">Проекты</a>
+          <a href="/company.html" class="footer-link">О компании</a>
           <a href="#contact" class="footer-link">Контакты</a>
-          <a href="site/privacy-policy.html" target="_blank" class="footer-link"
+          <a href="/privacy-policy.html" target="_blank" class="footer-link"
             >Политика конфиденциальности</a
           >
-          <a href="site/public-offer.html" target="_blank" class="footer-link">
+          <a href="/public-offer.html" target="_blank" class="footer-link">
             Публичная оферта
           </a>
         </div>
@@ -1139,7 +1154,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="site/JavaScript/js.js"></script>
+    <script src="/site/JavaScript/js.js?v=20260911-2"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
   </body>
 </html>

@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Переменные
 $primary: #6366f1;
 $primary-dark: #4f46e5;
@@ -2776,7 +2778,7 @@ body.menu-open {
     }
 
     &:hover {
-      background-color: darken($primary-color, 10%);
+      background-color: color.adjust($primary-color, $lightness: -10%);
       transform: translateY(-2px);
       box-shadow: 0 8px 15px rgba(59, 130, 246, 0.4);
 
@@ -4289,7 +4291,7 @@ body.menu-open {
     }
   }
 
-  &__accardeon {
+  &__accordion {
     max-width: 900px;
     width: 100%;
     margin: auto;
@@ -4318,6 +4320,11 @@ body.menu-open {
     color: white;
     cursor: pointer;
     text-align: left;
+
+    &:focus-visible {
+      outline: 2px solid #8ea7ff;
+      outline-offset: -4px;
+    }
   }
 
   &__left {
@@ -4382,9 +4389,11 @@ body.menu-open {
   &__content {
     max-height: 0;
     overflow: hidden;
+    visibility: hidden;
     transition:
       max-height 0.35s ease,
-      padding 0.35s ease;
+      padding 0.35s ease,
+      visibility 0s linear 0.35s;
     padding: 0 24px;
 
     p {
@@ -4398,6 +4407,8 @@ body.menu-open {
   &__item.active &__content {
     max-height: 320px;
     padding-bottom: 24px;
+    visibility: visible;
+    transition-delay: 0s;
   }
 
   &__meta {
@@ -8836,114 +8847,67 @@ html {
 
 // FAQ о цифровой платформе
 .business-faq {
-  padding: 96px 0;
-  background: #030711;
+  width: 100%;
+  padding: 50px 20px;
+  background: $blackFon;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &__header {
-    max-width: 780px;
-    margin-bottom: 42px;
-
-    > span {
-      display: block;
-      margin-bottom: 14px;
-      color: #8ea7ff;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
     h2 {
-      margin: 0;
-      color: #fff;
-      font-size: clamp(34px, 4vw, 58px);
-      line-height: 1.04;
-      letter-spacing: -0.04em;
+      margin: 0 0 1rem;
+      color: $gray-light;
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.15;
+      @include gradient-text;
+      animation:
+        title-glow 5s ease-in-out infinite,
+        flicker 3s infinite;
     }
 
     p {
-      max-width: 680px;
-      margin: 18px 0 0;
-      color: rgba(232, 238, 255, 0.68);
-      font-size: 17px;
-      line-height: 1.7;
-    }
-  }
-
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  &__item {
-    padding: 0 24px;
-    border: 1px solid rgba(119, 143, 210, 0.18);
-    border-radius: 18px;
-    background: linear-gradient(
-      145deg,
-      rgba(11, 24, 48, 0.88),
-      rgba(5, 13, 28, 0.92)
-    );
-
-    summary {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      color: #fff;
-      font-size: 17px;
-      font-weight: 650;
-      line-height: 1.35;
-      list-style: none;
-      cursor: pointer;
-
-      &::-webkit-details-marker {
-        display: none;
-      }
-
-      span {
-        flex: 0 0 auto;
-        color: #8ea7ff;
-        font-size: 25px;
-        font-weight: 400;
-        transition: transform 0.2s ease;
-      }
-    }
-
-    &[open] summary span {
-      transform: rotate(45deg);
-    }
-
-    p {
-      margin: -4px 0 24px;
-      color: rgba(232, 238, 255, 0.68);
-      font-size: 15px;
-      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: $text-light;
+      font-size: 1.25rem;
+      line-height: 1.6;
     }
   }
 }
 
 @media (max-width: 800px) {
   .business-faq {
-    padding: 72px 0;
+    padding: 50px 16px 40px;
 
     &__header {
-      margin-bottom: 30px;
-    }
+      h2 {
+        font-size: 2rem;
+      }
 
-    &__list {
-      grid-template-columns: 1fr;
-    }
-
-    &__item {
-      padding: 0 20px;
-
-      summary {
-        min-height: 72px;
-        font-size: 16px;
+      p {
+        margin-bottom: 28px;
+        font-size: 1rem;
       }
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .products__content,
+  .products__arrow,
+  .business-faq__header h2,
+  .products__title .services-h1 {
+    animation: none;
+    transition: none;
   }
 }

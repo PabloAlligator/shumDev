@@ -8,3 +8,4 @@ Disallow: /.env
 Disallow: /data/
 
 Sitemap: https://shumdev.ru/sitemap.xml
+Host: shumdev.ru

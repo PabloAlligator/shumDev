@@ -133,7 +133,8 @@ const publicStaticOptions = {
   },
 };
 
-app.get(['/', '/index.html'], (req, res) => {
+app.get('/index.html', (req, res) => res.redirect(301, '/'));
+app.get('/', (req, res) => {
   res.setHeader('Cache-Control', 'no-cache');
   return res.sendFile(path.join(root, 'index.html'));
 });
@@ -155,15 +156,55 @@ app.use(
   '/site/JavaScript',
   express.static(path.join(root, 'site', 'JavaScript'), publicStaticOptions),
 );
+// Чистые URL страниц находятся в корне, поэтому сохраняем единые абсолютные
+// адреса для их общих ресурсов.
+app.use(
+  '/css',
+  express.static(path.join(root, 'site', 'css'), publicStaticOptions),
+);
+app.use(
+  '/image',
+  express.static(path.join(root, 'site', 'image'), publicStaticOptions),
+);
+app.use(
+  '/JavaScript',
+  express.static(path.join(root, 'site', 'JavaScript'), publicStaticOptions),
+);
+
+const publicPages = new Map([
+  ['/services.html', path.join(root, 'site', 'pages', 'services.html')],
+  ['/price.html', path.join(root, 'site', 'pages', 'Price.html')],
+  ['/company.html', path.join(root, 'site', 'pages', 'company.html')],
+  [
+    '/privacy-policy.html',
+    path.join(root, 'site', 'privacy-policy.html'),
+  ],
+  ['/public-offer.html', path.join(root, 'site', 'public-offer.html')],
+]);
+
+for (const [route, filePath] of publicPages) {
+  app.get(route, (req, res) => {
+    res.setHeader('Cache-Control', 'no-cache');
+    return res.sendFile(filePath);
+  });
+}
+
+const legacyPublicRoutes = new Map([
+  ['/site/pages/services.html', '/services.html'],
+  ['/site/pages/Price.html', '/price.html'],
+  ['/site/pages/price.html', '/price.html'],
+  ['/site/pages/company.html', '/company.html'],
+  ['/site/privacy-policy.html', '/privacy-policy.html'],
+  ['/site/public-offer.html', '/public-offer.html'],
+]);
+
+for (const [legacyRoute, canonicalRoute] of legacyPublicRoutes) {
+  app.get(legacyRoute, (req, res) => res.redirect(301, canonicalRoute));
+}
+
 app.use(
   '/site/pages',
   express.static(path.join(root, 'site', 'pages'), publicStaticOptions),
-);
-app.get('/site/privacy-policy.html', (req, res) =>
-  res.sendFile(path.join(root, 'site', 'privacy-policy.html')),
-);
-app.get('/site/public-offer.html', (req, res) =>
-  res.sendFile(path.join(root, 'site', 'public-offer.html')),
 );
 
 app.use((req, res) => {
