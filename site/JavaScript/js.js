@@ -472,11 +472,13 @@ if (burger && mobileMenu && mobileMenuOverlay && mobileMenuClose) {
 
 // табы для секции "double"
 
-const projectCards = document.querySelectorAll('.project-card');
+const projectCards = document.querySelectorAll('[data-modal]');
 const modals = document.querySelectorAll('.projects-modal');
 
 projectCards.forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', event => {
+        if (event.defaultPrevented) return;
+
         const modalId = card.dataset.modal;
         const modal = document.getElementById(modalId);
 
@@ -523,6 +525,174 @@ document.addEventListener('keydown', e => {
 
         document.body.classList.remove('modal-open');
     }
+});
+
+// Интерактивная 3D-карусель избранных проектов
+document.querySelectorAll('[data-round-carousel]').forEach(carousel => {
+    const ring = carousel.querySelector('.round-carousel__ring');
+    const items = [...carousel.querySelectorAll('.round-carousel__item')];
+
+    if (!ring || items.length < 2) return;
+
+    const angle = 360 / items.length;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let radius = 0;
+    let rotation = 0;
+    let velocity = 0;
+    let lastFrame = 0;
+    let isDragging = false;
+    let isHovered = false;
+    let isFocused = false;
+    let isVisible = true;
+    let lastPointerX = 0;
+    let lastPointerTime = 0;
+    let dragDistance = 0;
+    let suppressClickUntil = 0;
+    let activeItem = -1;
+    let capturedPointerId = null;
+
+    const updateFrontItem = () => {
+        const normalized = ((-rotation % 360) + 360) % 360;
+        const nextActive = Math.round(normalized / angle) % items.length;
+
+        if (nextActive === activeItem) return;
+        activeItem = nextActive;
+        items.forEach((item, index) => item.classList.toggle('is-front', index === activeItem));
+    };
+
+    const layout = () => {
+        const itemWidth = items[0].getBoundingClientRect().width;
+        const spacingFactor = window.innerWidth <= 576 ? 1.2 : 1.34;
+        radius = (itemWidth * spacingFactor) / (2 * Math.tan(Math.PI / items.length));
+
+        items.forEach((item, index) => {
+            item.style.transform = `rotateY(${index * angle}deg) translateZ(${radius}px)`;
+        });
+
+        ring.style.transform = `translateZ(${-radius}px) rotateY(${rotation}deg)`;
+        updateFrontItem();
+    };
+
+    const render = now => {
+        const delta = lastFrame ? Math.min((now - lastFrame) / 1000, 0.08) : 0;
+        lastFrame = now;
+
+        if (!isDragging && isVisible && !document.hidden) {
+            if (Math.abs(velocity) > 0.08 && !reducedMotion.matches) {
+                rotation += velocity * delta;
+                velocity *= Math.pow(0.92, delta * 60);
+            } else if (!isHovered && !isFocused && !reducedMotion.matches) {
+                velocity = 0;
+                rotation += 9 * delta;
+            }
+        }
+
+        ring.style.transform = `translateZ(${-radius}px) rotateY(${rotation}deg)`;
+        updateFrontItem();
+        requestAnimationFrame(render);
+    };
+
+    carousel.addEventListener('pointerdown', event => {
+        if (event.button !== undefined && event.button !== 0) return;
+
+        isDragging = true;
+        dragDistance = 0;
+        velocity = 0;
+        lastPointerX = event.clientX;
+        lastPointerTime = performance.now();
+        carousel.classList.add('is-dragging');
+    });
+
+    carousel.addEventListener('pointermove', event => {
+        if (!isDragging) return;
+
+        const now = performance.now();
+        const deltaX = event.clientX - lastPointerX;
+        const deltaTime = Math.max(now - lastPointerTime, 8);
+        const rotationDelta = deltaX * 0.28;
+
+        dragDistance += Math.abs(deltaX);
+
+        // Не перехватываем указатель при обычном клике: на desktop ранний
+        // pointer capture меняет цель click с карточки на контейнер карусели.
+        // Захват нужен только после того, как пользователь действительно
+        // начал вращать кольцо.
+        if (dragDistance > 7 && capturedPointerId === null) {
+            carousel.setPointerCapture?.(event.pointerId);
+            capturedPointerId = event.pointerId;
+        }
+
+        rotation += rotationDelta;
+        velocity = (rotationDelta / deltaTime) * 1000;
+        lastPointerX = event.clientX;
+        lastPointerTime = now;
+    });
+
+    const endDrag = event => {
+        if (!isDragging) return;
+
+        isDragging = false;
+        carousel.classList.remove('is-dragging');
+
+        if (capturedPointerId !== null) {
+            carousel.releasePointerCapture?.(capturedPointerId);
+            capturedPointerId = null;
+        }
+
+        if (dragDistance > 7) {
+            suppressClickUntil = performance.now() + 350;
+        }
+    };
+
+    carousel.addEventListener('pointerup', endDrag);
+    carousel.addEventListener('pointercancel', endDrag);
+
+    carousel.addEventListener('click', event => {
+        if (performance.now() < suppressClickUntil) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    }, true);
+
+    carousel.addEventListener('mouseenter', () => {
+        isHovered = true;
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        isHovered = false;
+    });
+
+    carousel.addEventListener('focusin', () => {
+        isFocused = true;
+    });
+
+    carousel.addEventListener('focusout', event => {
+        if (!carousel.contains(event.relatedTarget)) isFocused = false;
+    });
+
+    carousel.addEventListener('keydown', event => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+
+        event.preventDefault();
+        velocity = 0;
+        rotation += event.key === 'ArrowLeft' ? angle : -angle;
+    });
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+            isVisible = entries[0]?.isIntersecting ?? true;
+        }, { threshold: 0.05 });
+        observer.observe(carousel);
+    }
+
+    let resizeFrame = 0;
+    window.addEventListener('resize', () => {
+        cancelAnimationFrame(resizeFrame);
+        resizeFrame = requestAnimationFrame(layout);
+    });
+
+    layout();
+    requestAnimationFrame(render);
 });
 // team section animation
 
