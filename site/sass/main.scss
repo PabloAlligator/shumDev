@@ -8833,3 +8833,117 @@ html {
     height: 21px;
   }
 }
+
+// FAQ о цифровой платформе
+.business-faq {
+  padding: 96px 0;
+  background: #030711;
+
+  &__header {
+    max-width: 780px;
+    margin-bottom: 42px;
+
+    > span {
+      display: block;
+      margin-bottom: 14px;
+      color: #8ea7ff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      max-width: 680px;
+      margin: 18px 0 0;
+      color: rgba(232, 238, 255, 0.68);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  &__item {
+    padding: 0 24px;
+    border: 1px solid rgba(119, 143, 210, 0.18);
+    border-radius: 18px;
+    background: linear-gradient(
+      145deg,
+      rgba(11, 24, 48, 0.88),
+      rgba(5, 13, 28, 0.92)
+    );
+
+    summary {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 650;
+      line-height: 1.35;
+      list-style: none;
+      cursor: pointer;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      span {
+        flex: 0 0 auto;
+        color: #8ea7ff;
+        font-size: 25px;
+        font-weight: 400;
+        transition: transform 0.2s ease;
+      }
+    }
+
+    &[open] summary span {
+      transform: rotate(45deg);
+    }
+
+    p {
+      margin: -4px 0 24px;
+      color: rgba(232, 238, 255, 0.68);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .business-faq {
+    padding: 72px 0;
+
+    &__header {
+      margin-bottom: 30px;
+    }
+
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      padding: 0 20px;
+
+      summary {
+        min-height: 72px;
+        font-size: 16px;
+      }
+    }
+  }
+}
