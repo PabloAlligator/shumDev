@@ -1456,22 +1456,22 @@ body.menu-open {
     inset: 10px 14px;
   }
   .hero .hero-card--growth {
-    top: 28%;
+    top: 42%;
     left: 5%;
     transform: rotate(-8deg);
   }
   .hero .hero-card--start {
-    top: 32%;
+    top: 40%;
     right: -2%;
     transform: rotate(8deg);
   }
   .hero .hero-card--projects {
-    top: 48%;
+    top: 65%;
     left: 7%;
     transform: rotate(6deg);
   }
   .hero .hero-card--support {
-    top: 53%;
+    top: 57%;
     right: 7%;
     transform: rotate(-6deg);
   }
