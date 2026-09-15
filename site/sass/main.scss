@@ -1440,7 +1440,7 @@ body.menu-open {
     &__value {
       display: block;
       color: #9c58ff;
-      font-size: 34px;
+      font-size: 26px;
       line-height: 1;
       font-weight: 900;
 
@@ -1498,27 +1498,27 @@ body.menu-open {
 
     &--growth {
       top: 12%;
-      left: 48%;
+      left: 42%;
       transform: rotate(-5deg);
     }
 
     &--start {
-      top: 10%;
+      top: 4%;
       right: 4.2%;
       transform: rotate(4deg);
       animation-delay: 0.8s;
     }
 
     &--projects {
-      top: 41%;
-      left: 49.5%;
+      top: 51%;
+      left: 43.5%;
       transform: rotate(4deg);
       animation-delay: 1.4s;
     }
 
     &--support {
-      top: 41%;
-      right: 11.8%;
+      top: 50%;
+      right: 9.8%;
       transform: rotate(-7deg);
       animation-delay: 2s;
     }
@@ -2067,7 +2067,7 @@ body.menu-open {
       }
 
       &__value {
-        font-size: 22px;
+        font-size: 13px;
       }
 
       small {
@@ -2091,26 +2091,26 @@ body.menu-open {
       }
 
       &--growth {
-        top: 78%;
-        left: -2%;
+        top: 28%;
+        left: 5%;
         transform: rotate(-8deg);
       }
 
       &--start {
-        top: 82%;
+        top: 32%;
         right: -2%;
         transform: rotate(8deg);
       }
 
       &--projects {
-        top: 128%;
-        left: 1%;
+        top: 48%;
+        left: 7%;
         transform: rotate(6deg);
       }
 
       &--support {
-        top: 168%;
-        right: -1%;
+        top: 53%;
+        right: 7%;
         transform: rotate(-6deg);
       }
     }
@@ -5022,15 +5022,25 @@ body.menu-open {
   padding: 54px 20px 66px;
   background:
     radial-gradient(circle at 50% 58%, rgba(93, 55, 255, 0.2), transparent 34%),
-    radial-gradient(circle at 16% 20%, rgba(0, 107, 255, 0.12), transparent 28%),
+    radial-gradient(
+      circle at 16% 20%,
+      rgba(0, 107, 255, 0.12),
+      transparent 28%
+    ),
     $dark;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(90deg, $dark 0%, transparent 14%, transparent 86%, $dark 100%);
+    background: linear-gradient(
+      90deg,
+      $dark 0%,
+      transparent 14%,
+      transparent 86%,
+      $dark 100%
+    );
     z-index: 2;
   }
 
@@ -5137,13 +5147,15 @@ body.menu-open {
     appearance: none;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       inset: -2px;
       border: 2px solid transparent;
       border-radius: 24px;
       pointer-events: none;
-      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     &:focus-visible {
@@ -5173,7 +5185,9 @@ body.menu-open {
     background: #07101f;
     backface-visibility: hidden;
     box-shadow: 0 22px 54px rgba(0, 0, 0, 0.48);
-    transition: border-color 0.28s ease, box-shadow 0.28s ease;
+    transition:
+      border-color 0.28s ease,
+      box-shadow 0.28s ease;
 
     img {
       display: block;
@@ -5184,10 +5198,14 @@ body.menu-open {
     }
 
     &--front::after {
-      content: "";
+      content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 38%, rgba(2, 7, 18, 0.93) 100%);
+      background: linear-gradient(
+        180deg,
+        transparent 38%,
+        rgba(2, 7, 18, 0.93) 100%
+      );
       pointer-events: none;
     }
 
@@ -5302,7 +5320,13 @@ body.menu-open {
 
 @media (max-width: 480px) {
   .featured-projects::before {
-    background: linear-gradient(90deg, $dark 0%, transparent 8%, transparent 92%, $dark 100%);
+    background: linear-gradient(
+      90deg,
+      $dark 0%,
+      transparent 8%,
+      transparent 92%,
+      $dark 100%
+    );
   }
 
   .round-carousel {
@@ -7385,7 +7409,7 @@ textarea.form-control {
   &__value {
     display: block;
     color: #9c58ff;
-    font-size: 34px;
+    font-size: 32px;
     line-height: 1;
     font-weight: 900;
     animation: valuePulse 3s ease-in-out infinite;
@@ -7508,15 +7532,15 @@ textarea.form-control {
   }
 
   &--team {
-    top: 13%;
-    left: 47.5%;
+    top: 11%;
+    left: 51.5%;
     --company-card-rotate: 4deg;
     transform: rotate(4deg);
   }
 
   &--projects {
     top: 37.5%;
-    left: 43.2%;
+    left: 48.2%;
     --company-card-rotate: 3deg;
     transform: rotate(3deg);
     animation-delay: 1.4s;
@@ -7531,8 +7555,8 @@ textarea.form-control {
   }
 
   &--start {
-    top: 37.5%;
-    right: 7.4%;
+    top: 40.5%;
+    right: 6.4%;
     --company-card-rotate: -3deg;
     transform: rotate(-3deg);
     animation-delay: 2s;
@@ -8013,7 +8037,7 @@ textarea.form-control {
     }
 
     &__value {
-      font-size: 22px;
+      font-size: 18px;
       line-height: 1;
     }
 
@@ -8031,26 +8055,26 @@ textarea.form-control {
     }
 
     &--team {
-      top: 78%;
-      left: -2%;
+      top: 38%;
+      left: 5%;
       transform: rotate(-8deg);
     }
 
     &--start {
-      top: 82%;
-      right: -2%;
+      top: 32%;
+      right: 5%;
       transform: rotate(8deg);
     }
 
     &--projects {
-      top: 128%;
-      left: 1%;
+      top: 58%;
+      left: 11%;
       transform: rotate(6deg);
     }
 
     &--support {
-      top: 125%;
-      right: -1%;
+      top: 50%;
+      right: 11%;
       transform: rotate(-6deg);
     }
   }
@@ -9078,8 +9102,6 @@ html {
   }
 }
 
-
-
 // Mobile floating actions
 .mobile-floating-actions {
   display: none;
@@ -9097,7 +9119,10 @@ html {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
   }
 
   .mobile-floating-actions.is-hidden {
@@ -9120,7 +9145,10 @@ html {
     -webkit-tap-highlight-color: transparent;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      border-color 0.18s ease;
   }
 
   .mobile-floating-actions__btn svg {
@@ -9139,7 +9167,9 @@ html {
     border: 1px solid rgba(0, 212, 255, 0.38);
     background: rgba(7, 12, 25, 0.94);
     color: #e8fbff;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38), 0 0 18px rgba(0, 212, 255, 0.12);
+    box-shadow:
+      0 10px 28px rgba(0, 0, 0, 0.38),
+      0 0 18px rgba(0, 212, 255, 0.12);
   }
 
   .mobile-floating-actions__btn:active {

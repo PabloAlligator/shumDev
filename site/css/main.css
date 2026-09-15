@@ -990,7 +990,7 @@ body.menu-open {
 .hero .hero-card__value {
   display: block;
   color: #9c58ff;
-  font-size: 34px;
+  font-size: 26px;
   line-height: 1;
   font-weight: 900;
   animation: valuePulse 3s ease-in-out infinite;
@@ -1023,24 +1023,24 @@ body.menu-open {
 }
 .hero .hero-card--growth {
   top: 12%;
-  left: 48%;
+  left: 42%;
   transform: rotate(-5deg);
 }
 .hero .hero-card--start {
-  top: 10%;
+  top: 4%;
   right: 4.2%;
   transform: rotate(4deg);
   animation-delay: 0.8s;
 }
 .hero .hero-card--projects {
-  top: 41%;
-  left: 49.5%;
+  top: 51%;
+  left: 43.5%;
   transform: rotate(4deg);
   animation-delay: 1.4s;
 }
 .hero .hero-card--support {
-  top: 41%;
-  right: 11.8%;
+  top: 50%;
+  right: 9.8%;
   transform: rotate(-7deg);
   animation-delay: 2s;
 }
@@ -1437,7 +1437,7 @@ body.menu-open {
     line-height: 1.2;
   }
   .hero .hero-card__value {
-    font-size: 22px;
+    font-size: 13px;
   }
   .hero .hero-card small {
     margin-top: 5px;
@@ -1456,23 +1456,23 @@ body.menu-open {
     inset: 10px 14px;
   }
   .hero .hero-card--growth {
-    top: 78%;
-    left: -2%;
+    top: 28%;
+    left: 5%;
     transform: rotate(-8deg);
   }
   .hero .hero-card--start {
-    top: 82%;
+    top: 32%;
     right: -2%;
     transform: rotate(8deg);
   }
   .hero .hero-card--projects {
-    top: 128%;
-    left: 1%;
+    top: 48%;
+    left: 7%;
     transform: rotate(6deg);
   }
   .hero .hero-card--support {
-    top: 168%;
-    right: -1%;
+    top: 53%;
+    right: 7%;
     transform: rotate(-6deg);
   }
   .hero .hero-features {
@@ -1982,7 +1982,7 @@ body.menu-open {
   transition: all 0.3s ease;
 }
 .cta__btn:hover {
-  background-color: rgb(4.3730272597%, 38.8713534194%, 95.2348158776%);
+  background-color: rgb(11.1512195122, 99.1219512195, 242.8487804878);
   transform: translateY(-2px);
   box-shadow: 0 8px 15px rgba(59, 130, 246, 0.4);
 }
@@ -5530,7 +5530,7 @@ textarea.form-control {
 .company-hero-card__value {
   display: block;
   color: #9c58ff;
-  font-size: 34px;
+  font-size: 32px;
   line-height: 1;
   font-weight: 900;
   animation: valuePulse 3s ease-in-out infinite;
@@ -5609,14 +5609,14 @@ textarea.form-control {
   display: none;
 }
 .company-hero-card--team {
-  top: 13%;
-  left: 47.5%;
+  top: 11%;
+  left: 51.5%;
   --company-card-rotate: 4deg;
   transform: rotate(4deg);
 }
 .company-hero-card--projects {
   top: 37.5%;
-  left: 43.2%;
+  left: 48.2%;
   --company-card-rotate: 3deg;
   transform: rotate(3deg);
   animation-delay: 1.4s;
@@ -5629,8 +5629,8 @@ textarea.form-control {
   animation-delay: 0.8s;
 }
 .company-hero-card--start {
-  top: 37.5%;
-  right: 7.4%;
+  top: 40.5%;
+  right: 6.4%;
   --company-card-rotate: -3deg;
   transform: rotate(-3deg);
   animation-delay: 2s;
@@ -5962,7 +5962,7 @@ textarea.form-control {
     line-height: 1.2;
   }
   .company-hero-card__value {
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1;
   }
   .company-hero-card small {
@@ -5976,23 +5976,23 @@ textarea.form-control {
     margin-top: 8px;
   }
   .company-hero-card--team {
-    top: 78%;
-    left: -2%;
+    top: 38%;
+    left: 5%;
     transform: rotate(-8deg);
   }
   .company-hero-card--start {
-    top: 82%;
-    right: -2%;
+    top: 32%;
+    right: 5%;
     transform: rotate(8deg);
   }
   .company-hero-card--projects {
-    top: 128%;
-    left: 1%;
+    top: 58%;
+    left: 11%;
     transform: rotate(6deg);
   }
   .company-hero-card--support {
-    top: 125%;
-    right: -1%;
+    top: 50%;
+    right: 11%;
     transform: rotate(-6deg);
   }
   .company-hero-feature {
@@ -6887,5 +6887,3 @@ html {
     transition: none;
   }
 }
-
-/*# sourceMappingURL=main.css.map */
