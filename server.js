@@ -17,7 +17,7 @@ function cliValue(name) {
 }
 
 const app = express();
-const HOST = cliValue('--host') || process.env.HOST || '127.0.0.1';const HOST = cliValue('--host') || '0.0.0.0';
+const HOST = cliValue('--host') || process.env.HOST || '127.0.0.1';
 const PORT = Number(cliValue('--port') || process.env.PORT || 3000);
 const root = __dirname;
 
