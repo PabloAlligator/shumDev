@@ -19,7 +19,7 @@
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <meta name="theme-color" content="#0b0f19" />
+    <meta name="theme-color" content="#08110d" />
 
     <link rel="canonical" href="https://shumdev.ru/" />
     <link rel="alternate" hreflang="ru-RU" href="https://shumdev.ru/" />
@@ -157,7 +157,7 @@
 
   <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header header--green">
       <div class="container">
         <div class="header-content">
           <a href="#home" class="logo">
@@ -169,16 +169,14 @@
             />
           </a>
 
-          <nav class="nav">
-            <a href="/" class="nav-link active" aria-current="page">Главная</a>
-            <a href="/services.html" class="nav-link">Решения</a>
+          <nav class="nav" aria-label="Основная навигация">
+            <a href="/services.html" class="nav-link">Услуги</a>
             <a href="/price.html" class="nav-link">Проекты</a>
             <a href="/company.html" class="nav-link">О компании</a>
-            <a href="#contact" class="nav-link">Контакты</a>
           </nav>
 
           <div class="header-actions">
-            <a href="#contact" class="header-cta"> Обсудить задачу </a>
+            <a href="#contact" class="header-cta">Обсудить проект</a>
 
             <button
               class="burger"
@@ -317,142 +315,99 @@
     </section> -->
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero__media">
+    <section id="home" class="hero hero--green">
+      <div class="hero-green__visual" aria-hidden="true">
         <picture>
           <source
-            media="(max-width: 768px)"
-            srcset="site/image/newHeroMob.webp"
+            media="(max-width: 430px) and (orientation: portrait)"
+            srcset="/site/image/hero-green-mobile-narrow.webp"
           />
+
+          <source
+            media="(max-width: 767px) and (orientation: portrait)"
+            srcset="/site/image/hero-green-mobile.webp"
+          />
+
+          <source
+            media="(max-width: 900px)"
+            srcset="/site/image/hero-green-square.webp"
+          />
+
+          <source
+            media="(max-width: 1180px)"
+            srcset="/site/image/hero-green-tablet-wide.webp"
+          />
+
+          <!-- Только реально очень широкие мониторы -->
+          <source
+            media="(min-width: 2200px) and (min-aspect-ratio: 12/5)"
+            srcset="/site/image/hero-green-ultrawide.webp"
+          />
+
+          <!-- Широкие мониторы примерно 21:9 -->
+          <source
+            media="(min-width: 1700px) and (min-aspect-ratio: 2/1)"
+            srcset="/site/image/hero-green-wide.webp"
+          />
+
+          <!-- Обычный desktop: 1280 / 1440 / 1920 -->
+          <source
+            media="(min-width: 1181px)"
+            srcset="/site/image/hero-green-desktop.webp"
+          />
+
           <img
-            class="hero__bg"
-            src="site/image/newHero.webp"
-            alt="hero"
+            src="/site/image/hero-green-tablet.webp"
+            alt=""
+            class="hero-green__image"
             decoding="async"
+            fetchpriority="high"
           />
         </picture>
-
-        <div class="hero__overlay"></div>
       </div>
 
-      <div class="container hero__container">
-        <div class="hero-content">
-          <div class="hero-text">
-            <div class="hero-badge">
-              Собственная цифровая платформа для бизнеса
-            </div>
+      <div class="container hero-green__shell">
+        <div class="hero-green__content">
+          <h1 class="hero-green__title">
+            <span class="hero-green__title-line">Собираем ваш бизнес</span>
+            <span class="hero-green__title-line">
+              <span class="hero-green__accent">в одном месте под вашим</span>
+            </span>
+            <span class="hero-green__title-line">брендом</span>
+          </h1>
 
-            <h1 class="hero-title">
-              <span class="hero-title__one">Собираем ваш бизнес</span>
-              <span class="hero-title__two">в одном месте</span>
-              <span class="hero-title__three">под вашим</span>
-              <span class="hero-title__four">брендом</span>
-            </h1>
-
-            <p class="hero-description">
-              Услуги, товары, работы, цены и заявки — на платформе, которую можно
-              продвигать через Яндекс, 2ГИС, социальные сети, поиск и рекламу.
-              Внешние каналы приводят аудиторию в ваше пространство под брендом
-              компании.
+          <div class="hero-green__lead">
+            <p class="hero-green__description">
+              Услуги, товары, работы, цены и заявки — на платформе, которую
+              можно продвигать через Яндекс, 2ГИС, социальные сети, поиск и
+              рекламу. Внешние каналы приводят аудиторию в ваше пространство под
+              брендом компании.
             </p>
 
-            <div class="hero-buttons">
-              <a href="/price.html" class="btn btn-primary">
+            <div class="hero-green__actions">
+              <a href="#contact" class="hero-green__primary">
+                Обсудить проект
+              </a>
+              <a href="/price.html" class="hero-green__secondary">
                 Смотреть проекты
               </a>
-              <a href="#contact" class="btn btn-outline"> Обсудить задачу </a>
-            </div>
-          </div>
-
-          <div class="hero-cards" data-parallax-area>
-            <div class="hero-card hero-card--growth" data-depth="0.8">
-              <span class="hero-card__label">ShumDev Business</span>
-              <strong class="hero-card__value">10 000 ₽</strong>
-              <small>в месяц</small>
-              <div class="hero-card__chart"></div>
-            </div>
-
-            <div class="hero-card hero-card--start" data-depth="1.1">
-              <span class="hero-card__label">Срок сотрудничества</span>
-              <strong class="hero-card__value">12 месяцев</strong>
-              <span class="hero-card__icon"></span>
-            </div>
-
-            <div class="hero-card hero-card--projects" data-depth="0.65">
-              <span class="hero-card__label">Формат</span>
-              <strong class="hero-card__value">Под ключ</strong>
-              <small>от задачи до запуска</small>
-            </div>
-
-            <div class="hero-card hero-card--support" data-depth="0.95">
-              <span class="hero-card__label">После запуска</span>
-              <strong class="hero-card__value">Поддержка</strong>
-              <small>в согласованном объёме</small>
             </div>
           </div>
         </div>
 
-        <div class="hero-features">
-          <div class="hero-feature">
-            <span class="hero-feature__icon">
-              <img
-                src="site/image/zevs.webp"
-                alt="Запуск цифровой платформы"
-                loading="lazy"
-                decoding="async"
-              />
-            </span>
-            <div class="hero-feature__text">
-              <strong>Одна точка бизнеса</strong>
-              <p>Услуги, товары, работы и цены</p>
-            </div>
-          </div>
+        <div class="hero-green__footer">
+          <p class="hero-green__footer-title">
+            От идеи до работающего продукта
+          </p>
 
-          <div class="hero-feature">
-            <span class="hero-feature__icon"
-              ><img
-                src="site/image/hadshake.webp"
-                alt="Надёжная цифровая платформа"
-                loading="lazy"
-                decoding="async"
-            /></span>
-            <div class="hero-feature__text">
-              <strong>Надёжность</strong>
-              <p>Разработка, сервер и защита данных</p>
-            </div>
-          </div>
-
-          <div class="hero-feature">
-            <span class="hero-feature__icon"
-              ><img
-                src="site/image/stonks.webp"
-                alt="Источники аудитории для бизнеса"
-                loading="lazy"
-                decoding="async"
-            /></span>
-            <div class="hero-feature__text">
-              <strong>Связь с каналами</strong>
-              <p>Яндекс, 2ГИС, соцсети, поиск и реклама</p>
-            </div>
-          </div>
-
-          <div class="hero-feature">
-            <span class="hero-feature__icon"
-              ><img
-                src="site/image/operator.webp"
-                alt="Сопровождение цифровой платформы"
-                loading="lazy"
-                decoding="async"
-            /></span>
-            <div class="hero-feature__text">
-              <strong>Сопровождение</strong>
-              <p>Исправления и небольшие изменения по договору</p>
-            </div>
+          <div class="hero-green__steps" aria-label="Этапы работы">
+            <span>Разработка</span>
+            <span>Запуск</span>
+            <span>Развитие</span>
           </div>
         </div>
       </div>
     </section>
-
     <!--  Над чем сейчас мы работае-->
 
     <section class="preview" aria-labelledby="preview-title">

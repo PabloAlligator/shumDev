@@ -1082,3 +1082,62 @@ if (!document.querySelector('#notification-styles')) {
     `;
     document.head.appendChild(style);
 }
+
+
+// Green hero intro — newTry
+const greenHero = document.querySelector('.hero--green');
+
+if (greenHero && window.gsap) {
+  const reduceMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  if (!reduceMotion) {
+    const greenHeroTl = gsap.timeline({
+      defaults: {
+        ease: 'power3.out',
+      },
+    });
+
+    greenHeroTl
+      .from('.hero-green__title-line', {
+        y: 34,
+        opacity: 0,
+        duration: 1.15,
+        stagger: 0.14,
+      })
+      .from(
+        '.hero-green__description',
+        {
+          y: 18,
+          opacity: 0,
+          duration: 0.85,
+        },
+        '-=0.62'
+      )
+      .from(
+        '.hero-green__actions',
+        {
+          y: 18,
+          opacity: 0,
+          duration: 0.85,
+        },
+        '-=0.58'
+      )
+      .from(
+        '.hero-green__footer',
+        {
+          opacity: 0,
+          duration: 0.9,
+        },
+        '-=0.42'
+      );
+
+    gsap.from('.hero-green__image', {
+      scale: 1.045,
+      opacity: 0.76,
+      duration: 2.15,
+      ease: 'power3.out',
+    });
+  }
+}
