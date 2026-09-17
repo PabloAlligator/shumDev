@@ -947,14 +947,150 @@ function initHomeHeroIntro() {
 
 initHomeHeroIntro();
 
-// Страница "О компании"
-initHeroCardsAnimation({
-  sectionSelector: '.company-hero',
-  cardSelector: '.company-hero-card',
-  introSelector:
-    '.company-hero__badge, .company-hero__title-line, .company-hero__description, .company-hero__actions',
-  featureSelector: '.company-hero-feature',
-});
+// Страница "О компании" — такая же плавная intro-анимация, как на главной
+function initCompanyHeroIntro() {
+  const hero = document.querySelector('.company-hero');
+
+  if (!hero || !window.gsap) return;
+
+  const reducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  if (reducedMotion) return;
+
+  const background = hero.querySelector('.company-hero__bg');
+  const overlay = hero.querySelector('.company-hero__overlay');
+  const badge = hero.querySelector('.company-hero__badge');
+  const titleLines = hero.querySelectorAll('.company-hero__title-line');
+  const description = hero.querySelector('.company-hero__description');
+  const buttons = hero.querySelectorAll('.company-hero__actions a');
+  const features = hero.querySelectorAll('.company-hero-feature');
+
+  const duration = 1.3;
+
+  const timeline = gsap.timeline({
+    defaults: {
+      duration,
+      ease: 'power3.out',
+    },
+  });
+
+  if (background) {
+    timeline.fromTo(
+      background,
+      {
+        scale: 1.055,
+        opacity: 0.72,
+      },
+      {
+        scale: 1.01,
+        opacity: 1,
+        clearProps: 'opacity',
+      },
+      0
+    );
+  }
+
+  if (overlay) {
+    timeline.fromTo(
+      overlay,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        clearProps: 'opacity',
+      },
+      0.08
+    );
+  }
+
+  if (badge) {
+    timeline.fromTo(
+      badge,
+      {
+        y: 16,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        clearProps: 'transform,opacity',
+      },
+      0.14
+    );
+  }
+
+  if (titleLines.length) {
+    timeline.fromTo(
+      titleLines,
+      {
+        y: 28,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.08,
+        clearProps: 'transform,opacity',
+      },
+      0.2
+    );
+  }
+
+  if (description) {
+    timeline.fromTo(
+      description,
+      {
+        y: 22,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        clearProps: 'transform,opacity',
+      },
+      0.42
+    );
+  }
+
+  if (buttons.length) {
+    timeline.fromTo(
+      buttons,
+      {
+        y: 18,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.09,
+        clearProps: 'transform,opacity',
+      },
+      0.52
+    );
+  }
+
+  if (features.length) {
+    timeline.fromTo(
+      features,
+      {
+        y: 18,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.08,
+        clearProps: 'transform,opacity',
+      },
+      0.68
+    );
+  }
+}
+
+initCompanyHeroIntro();
 
 // Анимация секции "Цифровые решения"
 const previewSection = document.querySelector('.preview');
