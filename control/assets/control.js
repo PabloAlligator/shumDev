@@ -102,6 +102,7 @@
       .join('')
       .toUpperCase() || 'SD';
   const isManager = () => ['OWNER', 'MANAGER'].includes(state.user?.role);
+  const isOwner = () => state.user?.role === 'OWNER';
   const date = (value, withTime = true) =>
     value
       ? new Intl.DateTimeFormat(
@@ -208,6 +209,7 @@
     if (mobileRole) mobileRole.textContent = role;
     if (mobileAvatar) mobileAvatar.innerHTML = avatarContent;
 
+    if (!isOwner()) document.querySelectorAll('[data-owner]').forEach((node) => node.remove());
     if (!isManager())
       document
         .querySelectorAll('[data-manager]')
@@ -253,6 +255,7 @@
       if (route === 'overview') await renderOverview();
       else if (route === 'leads' && isManager()) await renderLeads();
       else if (route === 'projects') await renderProjects();
+      else if (route === 'billing' && isOwner()) await window.ShumDevBilling.render({ main, api, modal, closeModal, toast, showError });
       else if (route === 'tasks' && id) await renderTaskDetail(id);
       else if (route === 'tasks') await renderTasks();
       else if (route === 'team') await renderTeam();

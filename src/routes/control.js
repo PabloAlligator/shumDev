@@ -164,6 +164,9 @@ router.get("/auth/me", requireAuth, (req, res) => {
 
 router.use(requireAuth, requireCsrf);
 
+// Учёт фактических поступлений доступен только владельцу.
+router.use("/billing", require("./billing"));
+
 router.post("/auth/logout", asyncRoute(async (req, res) => {
     await prisma.session.delete({ where: { id: req.sessionRecord.id } }).catch(() => {});
     res.clearCookie(SESSION_COOKIE, clearCookieOptions());

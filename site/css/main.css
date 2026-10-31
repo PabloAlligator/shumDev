@@ -1932,7 +1932,7 @@ body.menu-open {
   transition: all 0.3s ease;
 }
 .cta__btn:hover {
-  background-color: rgb(11.1512195122, 99.1219512195, 242.8487804878);
+  background-color: rgb(4.3730272597%, 38.8713534194%, 95.2348158776%);
   transform: translateY(-2px);
   box-shadow: 0 8px 15px rgba(59, 130, 246, 0.4);
 }
@@ -8447,3 +8447,5 @@ body.home-page .digital-products::before, body.home-page .digital-products::afte
     padding-inline: 12px;
   }
 }
+
+/*# sourceMappingURL=main.css.map */

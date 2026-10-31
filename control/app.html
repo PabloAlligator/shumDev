@@ -11,6 +11,7 @@
     <meta name="theme-color" content="#040a07" />
     <link rel="stylesheet" href="/control/vendor/tabler/tabler-icons.min.css" />
     <link rel="stylesheet" href="/site/css/control.min.css?v=20261012-green-theme-2">
+    <link rel="stylesheet" href="/control/assets/billing.css?v=20261031-1" />
   </head>
   <body class="control-app">
     <div class="app-shell">
@@ -39,6 +40,11 @@
             ><i class="ti ti-file-description"></i><span>Заявки</span
             ><em id="nav-leads"></em
           ></a>
+
+          <span class="nav__section" data-owner>Управление</span>
+          <a href="#/billing" data-route="billing" data-owner
+            ><i class="ti ti-wallet"></i><span>Финансы</span></a
+          >
 
           <span class="nav__section">Команда</span>
           <a href="#/team" data-route="team"
@@ -218,6 +224,10 @@
             <span><i class="ti ti-file-description"></i></span>
             <div><b>Заявки</b><small>Обращения и продажи</small></div>
           </a>
+          <a href="#/billing" data-mobile-menu-route="billing" data-owner>
+            <span><i class="ti ti-wallet"></i></span>
+            <div><b>Финансы</b><small>Поступления и клиенты</small></div>
+          </a>
           <a href="#/team" data-mobile-menu-route="team">
             <span><i class="ti ti-users"></i></span>
             <div><b>Сотрудники</b><small>Участники и роли</small></div>
@@ -243,6 +253,7 @@
 
     <div class="modal-root" id="modal-root"></div>
     <div class="toast-root" id="toast-root" aria-live="polite"></div>
-    <script src="/control/assets/control.js?v=20261012-lead-cards-1" defer></script>
+    <script src="/control/assets/billing.js?v=20261031-1" defer></script>
+    <script src="/control/assets/control.js?v=20261031-billing-1" defer></script>
   </body>
 </html>

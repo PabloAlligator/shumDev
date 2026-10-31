@@ -340,3 +340,52 @@ model PushSubscription {
 
   @@index([userId])
 }
+
+// Финансовый учёт ShumDev. Не связан с задачами и рабочими проектами,
+// чтобы импорт старого портфеля клиентов не затрагивал существующие данные.
+model BillingClient {
+  id                Int               @id @default(autoincrement())
+  name              String
+  projectName       String?
+  note              String?
+  kind              String            @default("MONTHLY") // MONTHLY | ONE_TIME
+  startMonth        String
+  archivedFromMonth String?
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+  payments          BillingPayment[]
+  pauses            BillingPause[]
+
+  @@index([archivedFromMonth])
+  @@index([name])
+}
+
+model BillingPayment {
+  id             Int           @id @default(autoincrement())
+  clientId       Int
+  periodMonth    String        // месяц, за который заплатили
+  receivedOn     String        // дата фактического поступления YYYY-MM-DD
+  amountKopecks  Int
+  note           String?
+  createdById    Int?
+  requestKey     String?       @unique // защита от повторной отправки формы
+  voidedAt       DateTime?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  client         BillingClient @relation(fields: [clientId], references: [id], onDelete: Restrict)
+
+  @@index([periodMonth, voidedAt])
+  @@index([receivedOn, voidedAt])
+  @@index([clientId, periodMonth])
+}
+
+model BillingPause {
+  id        Int           @id @default(autoincrement())
+  clientId  Int
+  fromMonth String
+  toMonth   String?
+  createdAt DateTime      @default(now())
+  client    BillingClient @relation(fields: [clientId], references: [id], onDelete: Restrict)
+
+  @@index([clientId, fromMonth])
+}
